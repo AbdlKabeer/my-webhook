@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# Webhook Dashboard & API
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Overview
+The **Webhook Dashboard & API** is a full-stack application designed to help users manage, monitor, and test webhooks in real-time. It consists of a Node.js/Express backend that receives and stores webhooks, and a React frontend that provides an interactive dashboard to view them as they are triggered.
 
-## Available Scripts
+Key features include:
+- **Real-Time Webhooks:** View incoming webhooks in real-time via WebSocket integration.
+- **Webhook Management:** Add, delete, or clear webhooks from the dashboard.
+- **Detailed View:** Inspect individual webhook details, including headers, body, and query parameters.
+- **Filter and Search:** Filter webhooks based on method, path, or IP.
+- **Clipboard Copying:** Easily copy webhook data (headers, body, query parameters) to your clipboard.
+- **Responsive Design:** Fully responsive layout for both desktop and mobile.
 
-In the project directory, you can run:
+## Repository Structure
+This repository contains both the frontend and backend of the application:
+- `/webhook-api`: The backend Node.js API server.
+- `/webhook-ui`: The frontend React application built with Vite.
 
-### `npm start`
+## Technologies Used
+**Frontend (webhook-ui):**
+- React 19
+- Vite
+- Tailwind CSS v4
+- React Router
+- Axios
+- WebSockets
+- React Syntax Highlighter
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**Backend (webhook-api):**
+- Node.js
+- Express.js
+- MongoDB (via Mongoose)
+- WebSockets (ws)
+- dotenv
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Installation & Setup
 
-### `npm test`
+### Prerequisites
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Backend Setup (API)
+1. Navigate to the API directory:
+   ```bash
+   cd webhook-api
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Create a `.env` file in the `webhook-api` directory with your environment variables (e.g., MongoDB URI, PORT).
+4. Start the backend server:
+   ```bash
+   npm run dev
+   ```
 
-### `npm run build`
+### Frontend Setup (UI)
+1. Open a new terminal and navigate to the UI directory:
+   ```bash
+   cd webhook-ui
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start the frontend development server:
+   ```bash
+   npm run dev
+   ```
+4. The frontend will be accessible at `http://localhost:5173` (or the port specified by Vite).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Features
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Real-Time Webhooks
+The application listens to a WebSocket and displays incoming webhooks instantly. As soon as a new webhook is received by the backend, it will appear in the frontend list without needing to refresh.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Filter Webhooks
+You can filter webhooks by their method, path, or IP address to quickly find the data you need.
 
-### `npm run eject`
+### Detailed View
+Clicking on any webhook entry will show you detailed information about it, including:
+- Request method (GET, POST, etc.)
+- Path and IP address
+- Request headers, body content, and query parameters (if applicable)
+- Formatted syntax for easier reading
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## License
+This project is licensed under the MIT License.

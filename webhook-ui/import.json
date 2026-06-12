@@ -1,0 +1,20 @@
+{
+    "url": "https://webhook-me.vercel.app/webhook/ceaa6162-8197-4acd-be43-bf86b55328ff",
+    "method": "POST",
+    "headers": [
+      {
+        "key": "Content-Type",
+        "value": "application/json"
+      },
+      {
+        "key": "Authorization",
+        "value": "Bearer your_token_here"
+      },
+      {
+        "key": "X-Custom-Header",
+        "value": "CustomValue"
+      }
+    ],
+    "body": "{\n  \"event\": \"user.created\",\n  \"timestamp\": \"2025-03-31T10:00:00Z\",\n  \"data\": {\n    \"userId\": \"usr_123456\",\n    \"email\": \"user@example.com\",\n    \"name\": \"John Doe\",\n    \"signupSource\": \"website\"\n  }\n}",
+    "exportDate": "2025-03-31T10:15:30Z"
+}
